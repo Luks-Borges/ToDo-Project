@@ -14,3 +14,10 @@
  *= require_self
 
  */
+ .navbar navbar-light{
+    background-color: #94159B; /* Replace with your desired color */
+}
+
+h1{
+    color: white;
+}

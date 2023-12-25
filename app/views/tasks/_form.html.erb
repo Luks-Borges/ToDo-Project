@@ -11,22 +11,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <div style="padding-left: 5%; padding-top: 50px">
+    <div>
+      <%= form.label :name, style: "display: block; font-weight: bold; font-size: x-large; padding-left: 16px" %>
+      <%= form.text_field :name, style: "border-radius: 50px; padding: 10px; width: 45%" %>
+    </div>
 
-  <div>
-    <%= form.label :url_image, style: "display: block" %>
-    <%= form.text_field :url_image %>
-  </div>
+    <div>
+      <%= form.label :url_image, style: "display: block; font-weight: bold; padding-top: 15px; font-size: 25px; padding-left: 16px" %>
+      <%= form.text_field :url_image, style: "border-radius: 50px; padding: 10px; width: 45%" %>
+    </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+    <div>
+      <%= form.label :description, style: "display: block; font-weight: bold; padding-top: 15px; font-size: 25px; padding-left: 16px" %>
+      <%= form.text_field :description, style: "border-radius: 50px; padding: 10px; width: 45%" %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div style="padding: 20px 30px 39.4px 0px">
+    <%= submit_tag 'Create', class: 'btn btn-outline-primary', style: "border-radius: 50px; font-weight: bold; font-size: x-large; padding: 3px 20px" %>
+    </div>
+
+    </div>
+    <footer class="text-center text-white" style="background-color: #94159B;">
+    <div class="container p-4 pb-0">
+    <section class="", style="height: 50px">
+    </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"> Todos os direitos reservados</a>
+    </div>
+    </footer>
+  </section>
   </div>
 <% end %>

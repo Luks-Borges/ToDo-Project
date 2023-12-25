@@ -13,6 +13,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    render layout: "create_layout"
   end
 
   # GET /tasks/1/edit

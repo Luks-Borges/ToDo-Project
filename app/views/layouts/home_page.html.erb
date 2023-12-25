@@ -18,6 +18,18 @@
         background-size: cover;
         background-position: center;
         }
+      img {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      img:hover {
+        width: 110px;
+        height: 110px;
+        border: solid rgb(255,255,255)
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +40,10 @@
     <nav class="navbar navbar-light"style="color:white; background-color: #94159B; height: 130px; margin-bottom: 30px;">
       <h1 style=" padding-left:4.5%; font-size: 300%;
               text-shadow: -3px -3px #9B30FF;}"><%=User.first.name%>'s ToDo</h1>
-              # Imagem do user
+      
+      <%= link_to 'http://localhost:3000/users/1', style:"text-decoration: none;" do %>
+        <%= image_tag User.first.url_image%>
+        <%end%>
     </nav>
     <%=yield %>
     <footer>

@@ -12,6 +12,13 @@
             color: white;
             border: solid;
             border-radius: 50px;
+            height: 120%;
+            text-decoration: none;
+            transition: font-size 0.7s ease
+        }
+        .col-sm h3:hover{
+            font-size: 40px;
+            font-weight: revert;
         }
         h2 {
             color: white;
@@ -26,16 +33,31 @@
                 <h1 style="margin-bottom: 30px; font-size: xxx-large;"> <%= Time.now.strftime("%H:%M")%> </h1>
                 <h3 style="border: none; margin-bottom: 15px; font-size: xx-large;"><strong><%= date_brazilian_format(Date.today) %></strong></h3>
             </div>
-            <div class="col-sm" style="padding-top: 5px; text-align: center; display: flex; flex-direction: column; flex-wrap: wrap; justify-content: space-evenly; margin-left: 20px">
-                <div class="buttom_style">
-                    <h3 style="background-color: #F820FE; border-color:#F820FE; font-weight: revert;">Alguma coisa</p>
+            <div class="col-sm" style="padding-top: 5px; text-align: center; display: flex; flex-direction: column; flex-wrap: wrap; justify-content: space-evenly; padding: 5%;">
+                <div>
+                    <%= link_to tasks_path, style:"text-decoration: none;" do %>
+                    <h3 style="background-color: #F820FE; border-color:#F820FE;
+                                text-shadow: -3px -3px #9B30FF;font-weight: revert;">Your ToDo List</h3>
+                    <%end%>
                 </div>
-                <div class="buttom_style">
-                    <h3 style="background-color: #E51EEB; border-color: #E51EEB; font-weight: revert;">Alguma coisa</p>
-                </div
-                <div class="buttom_style">
-                    <h3 style="background-color: #94159B; border-color: #94159B; font-weight: revert;">Alguma coisa</p>
-                </div
+                <div>
+                    <%= link_to 'http://localhost:3000/tasks/new', style:"text-decoration: none;"  do %>
+                    <h3 style="background-color: #E51EEB; border-color: #E51EEB; font-weight: revert;
+                                text-shadow: -3px -3px #9B30FF;">New ToDo</h3>
+                    <%end%>
+                </div>
+                <div>
+                    <%= link_to 'http://localhost:3000/users/1/edit', style:"text-decoration: none;"  do %>
+                    <h3 style="background-color: #C734CF; border-color: #C734CF; font-weight: revert;
+                                text-shadow: -3px -3px #9B30FF; ">User Edit</h3>
+                    <%end%>
+                </div>
+                <div>
+                    <%= link_to 'http://localhost:3000/users/1/edit', style:"text-decoration: none;"  do %>
+                    <h3 style="background-color: #94159B; border-color: #94159B; font-weight: revert;
+                                text-shadow: -3px -3px #9B30FF; ">Logout</h3>
+                    <%end%>
+                </div>
             </div>
         </div>
     </div>

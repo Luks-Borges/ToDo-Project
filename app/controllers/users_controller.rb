@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    render layout: "user_edit_layout"
   end
 
   # POST /users or /users.json
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
+        format.html { redirect_to root_path }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }

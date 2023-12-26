@@ -10,28 +10,59 @@
       </ul>
     </div>
   <% end %>
+  <head>
+    <style>
+        .container {
+          display: flex;
+        }
+      input {
+          width: 1000px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="max-width: 100%">
+      <div class="container">
+        <div style="padding-left: 5%; padding-top: 50px">
+          <div>
+            <%= form.label :name, style: "display: block; font-weight: bold; font-size: x-large; padding-left: 16px" %>
+            <%= form.text_field :name, style: "border-radius: 50px; padding: 10px;" %>
+          </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+          <div>
+            <%= form.label :country, style: "display: block; font-weight: bold; padding-top: 15px; font-size: 25px; padding-left: 16px" %>
+            <%= form.text_field :country, style: "border-radius: 50px; padding: 10px;" %>
+          </div>
 
-  <div>
-    <%= form.label :country, style: "display: block" %>
-    <%= form.text_field :country %>
-  </div>
+          <div>
+            <%= form.label :status, style: "display: block; font-weight: bold; padding-top: 15px; font-size: 25px; padding-left: 16px" %>
+            <%= form.text_field :status, style: "border-radius: 50px; padding: 10px;" %>
+          </div>
 
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_area :status %>
-  </div>
+          <div>
+            <%= form.label :url_image, style: "display: block; font-weight: bold; padding-top: 15px; font-size: 25px; padding-left: 16px" %>
+            <%= form.text_field :url_image, style: "border-radius: 50px; padding: 10px;" %>
+          </div>
 
-  <div>
-    <%= form.label :url_image, style: "display: block" %>
-    <%= form.text_field :url_image %>
-  </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+          <div style="padding: 20px 30px 250.5px 0px">
+          <%= submit_tag 'Submit', class: 'btn btn-outline-primary', style: "border-radius: 50px; font-weight: bold; font-size: x-large; padding: 3px 20px;  width: 25%" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="display: flex;
+      justify-content: center; text-align: center;">
+        <div>
+          <%= image_tag @user.url_image, style:"width: auto;
+          height: 50%; padding-top: 30px; border: hidden;
+          border-radius: 10%;
+      }"%>
+          <div>
+          <span style="color: white;">User created at <%= @user.created_at.strftime("%d/%m/%y") %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 <% end %>

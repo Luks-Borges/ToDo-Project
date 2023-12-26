@@ -1,17 +1,27 @@
-<div id="<%= dom_id task %>">
-  <p>
-    <strong>Name:</strong>
-    <%= task.name %>
-  </p>
-
-  <p>
-    <strong>Url image:</strong>
-    <%= task.url_image %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= task.description %>
-  </p>
-
-</div>
+<head>
+  <style>
+    h3 {
+      color: white;
+      border: solid;
+      text-decoration: none;
+      transition: font-size 0.7s;
+      font-size: xxx-large;
+      margin: 0px 50px;
+    }
+    h3:hover{
+      font-size: 60px;
+      font-weight: revert;
+      margin: 0px 10px;
+    }
+  </style>
+</head>
+<body>
+    <div>  
+      <div id="<%= dom_id task %>" style="margin-top: 15px">
+        <%= link_to task, style:"text-decoration: none;"  do %>
+          <h3 style="background-color: #C734CF; border-color: #C734CF; font-weight: revert;
+                    text-shadow: -3px -3px #9B30FF; display: flex;"><strong><%= task.name %></strong></h3>
+        <%end%>
+      </div>
+    </div>
+</body>

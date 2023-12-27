@@ -25,7 +25,7 @@
             text-shadow: -3px -3px #9B30FF; }"><%= User.first.name %>'s List</h1>
         <div style="display: flex; flex-direction: column; padding-right: 70px">
             <p style="margin-bottom: 10px;"><%= link_to "Back to menu", root_path, style:"color: white; text-decoration: none; font-weight: bold; font-size: x-large;" %></p>
-            <p><%= link_to "Back to your list", tasks_path, style:"color: white; text-decoration: none; font-weight: bold; font-size: x-large;" %></p>
+            <p><%= link_to "User Settings", 'http://localhost:3000/users/1/edit', style:"color: white; text-decoration: none; font-weight: bold; font-size: x-large;" %></p>
         </div>
     </nav>
     <%= yield %>

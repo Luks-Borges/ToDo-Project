@@ -41,7 +41,7 @@
       <h1 style=" padding-left:4.5%; font-size: 300%;
               text-shadow: -3px -3px #9B30FF;}"><%=User.first.name%>'s ToDo</h1>
       
-      <%= link_to 'http://localhost:3000/users/1', style:"text-decoration: none;" do %>
+      <%= link_to 'http://localhost:3000/users/1/edit', style:"text-decoration: none;" do %>
         <%= image_tag User.first.url_image%>
         <%end%>
     </nav>

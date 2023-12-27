@@ -1,5 +1,22 @@
+<head>
+  <style>
+    .button:hover {
+        background-color: rgb(148, 21, 155);
+      }
+  </style>
+</head>
+<body> 
+  <div>
+    <%= link_to 'http://localhost:3000/tasks/new', style:"text-decoration: none;"  do %>
+    <h1 class="button" style="background-color: #E51EEB; border-color: #E51EEB; text-shadow: -3px -3px #9B30FF; border-radius: 50%; max-width: 50px; 
+    padding: 9px; max-height: 50px; margin-bottom: 0px; margin-left: 48px; margin-top: 10px; display: flex; justify-content: center; align-items: center;
+    padding-bottom: 2px;">+</h1>
+    <%end%>
+  </div>
+
   <div id="tasks">
     <% @tasks.each do |task| %>
       <%= render task %>
     <% end %>
   </div>
+</body>

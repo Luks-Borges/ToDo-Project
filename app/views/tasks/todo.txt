@@ -1,0 +1,38 @@
+_______________________ Coisas para levar em conta _______________________
+-> Tamanho do título
+-> Tamanho da descrição
+
+_______________________ Para ser feito _______________________
+-> 3 tarefas em seed e 1 usuário
+-> Rake para fazer um reboot do banco de dados
+-> Fazer a spec das actions
+-> Fazer dois botões em baixo, create e edit
+-> text align, start
+
+_______________________ Ajustes finais _______________________
+-> Estudar e ver se vale a pena pensar em um deploy
+
+_______________________ Para ser estudado _______________________
+-> Estudar os arquivos rspec
+
+
+
+botão edit{   
+  border-radius: 0.25rem;
+  width: 71.63;
+  height: 38px;
+  margin-right: 10px;
+  transition: font-size 0.7s ease
+  background-color: rgb(40, 167, 69);
+  border-color: rgb(40, 167, 69);
+}
+
+botão edit:hover {
+  background-color: rgb(229, 30, 235);
+  border-color: rgb(229, 30, 235);
+  font-weight: revert;
+  text-shadow: -3px -3px rgb(155, 48, 255);
+}
+
+
+task_image_url=(x.url_image.present? && x.url_image.include?(".jpg" || ".jpeg"))? x.url_image : 'https://i.pinimg.com/736x/e1/7e/8e/e17e8e12ec506bc8c7f6133105044111.jpg'

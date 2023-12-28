@@ -30,7 +30,7 @@ class PostLib
         {
             name: 'Nicolly',
             country: 'Canada',
-            status: 'This is my Bio',
+            status: 'https://i.pinimg.com/originals/72/1c/68/721c68c83bffa6d2a720313fb08fc27e.gif',
             url_image: 'https://i.pinimg.com/736x/6f/83/88/6f8388149c3fdb4640683fda6f667645.jpg'
         },
         ]

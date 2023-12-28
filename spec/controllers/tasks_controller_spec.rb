@@ -6,7 +6,16 @@ RSpec.describe TasksController, type: :controller do
             it 'realiza a requisição' do
                 get :index
                 expect(response).to render_template(:all_tasks_layout)
+                expect(response).redirect_to (tasks_path)
             end
+        end
+    end
+
+    describe '#new' do
+        it 'realiza a requisição' do
+            get :new
+            expect(response).to render_template(:create_layout)
+            expect(response).to have_http_status(200)
         end
     end
 
@@ -34,14 +43,15 @@ RSpec.describe TasksController, type: :controller do
     describe '#edit' do
         it 'quando a requisição de edit é bem sucedida' do
             get :edit, params: {id: task.id}
-            expect(task.due_at).to eq(task.due_at)
+            expect(response).to render_template(:edit_layout)
             expect(response).to have_http_status(200)
         end
     end
 
-    it 'Resposta positiva para um cancelamento' do
+    describe '#destroy' do
         expect do
           delete :destroy, params: { id: task.id }
-        end.to change(bill.charges, :count).by(0)
+        end.to change(Task, :count).by(0)
+        expect(response).to have_http_status(200)
     end
 end

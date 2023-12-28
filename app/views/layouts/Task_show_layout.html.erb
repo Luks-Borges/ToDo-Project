@@ -70,7 +70,7 @@
                         <p><%=@task.created_at.strftime("%d/%m/%y")%></p>
                     </div>
                     <div style="text-align: start; max-width: 600px;">
-                        <h1>Task description</h1>
+                        <h1><%=@task.name%></h1>
                         <p><%=simple_format(@task.description)%></p>
                     </div>
 

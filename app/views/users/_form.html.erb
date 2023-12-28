@@ -51,10 +51,11 @@
         </div>
       </div>
 
+      <% user_image_url=(@user.url_image.present? && @user.url_image.include?(".jpg" || ".jpeg"))? @user.url_image : 'https://i.pinimg.com/736x/e9/05/1a/e9051a7db6d278fac69e6f17cb443ff6.jpg' %>
       <div class="container" style="display: flex;
       justify-content: center; text-align: center;">
         <div>
-          <%= image_tag @user.url_image, style:"width: auto;
+          <%= image_tag user_image_url, style:"width: auto;
           height: 50%; padding-top: 30px; border: hidden;
           border-radius: 10%;
       }"%>

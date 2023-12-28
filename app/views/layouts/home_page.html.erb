@@ -39,11 +39,11 @@
   <body>
     <nav class="navbar navbar-light"style="color:white; background-color: #94159B; height: 130px; margin-bottom: 30px;">
       <h1 style=" padding-left:4.5%; font-size: 300%;
-              text-shadow: -3px -3px #9B30FF;}"><%=User.first.name%>'s ToDo</h1>
-      
-      <%= link_to 'http://localhost:3000/users/1/edit', style:"text-decoration: none;" do %>
-        <%= image_tag User.first.url_image%>
-        <%end%>
+              text-shadow: -3px -3px #9B30FF;}"><%=User.first.name%>'s Home page</h1>
+
+        <%= link_to edit_user_path(User.last), style: "text-decoration: none;" do %>
+          <%= image_tag User.last.url_image %>
+        <% end %>
     </nav>
     <%=yield %>
     <footer>

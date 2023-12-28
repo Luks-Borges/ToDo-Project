@@ -5,6 +5,6 @@ module ApplicationHelper
 
     def ambient_identification
         x = Time.now.hour
-        (x >= 18 && x <= 24)? "Boa Noite" : ((x >= 1 && x <= 6) || (x >= 6 && x <= 12))? "Bom Dia" :  "Boa Tarde"
+        (x >= 18 && x <= 24)? "Good night" : ((x >= 1 && x <= 6) || (x >= 6 && x <= 12))? "Good morning" :  "Good afternoon"
     end
 end

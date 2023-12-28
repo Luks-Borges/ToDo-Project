@@ -23,6 +23,12 @@
         h2 {
             color: white;
         }
+        h2:hover {
+            font-weight: bolder;
+        }
+        .time_num:hover{
+            font-weight: bolder;
+        }
     </style>
 </head>
 <body>
@@ -30,30 +36,31 @@
         <div class="row">
             <div class="col-sm", style="background-color: #A169A4; border-radius: 20px; text-align: center; padding: 90px 1px;">
                 <h2 style="margin-bottom: 30px; font-size: xx-large; padding-top: 30px"><%= ambient_identification %> <%= User.first.name %></h2>
-                <h1 style="margin-bottom: 30px; font-size: xxx-large;"> <%= Time.now.strftime("%H:%M")%> </h1>
+                <h1 style="margin-bottom: 30px; font-size: xxx-large;" class="time_num"> <%= Time.now.strftime("%H:%M")%> </h1>
                 <h3 style="border: none; margin-bottom: 15px; font-size: xx-large;"><strong><%= date_brazilian_format(Date.today) %></strong></h3>
             </div>
+
             <div class="col-sm" style="padding-top: 5px; text-align: center; display: flex; flex-direction: column; flex-wrap: wrap; justify-content: space-evenly; padding: 5%;">
                 <div>
                     <%= link_to tasks_path, style:"text-decoration: none;" do %>
                     <h3 style="background-color: #F820FE; border-color:#F820FE;
-                                text-shadow: -3px -3px #9B30FF;font-weight: revert;">Your ToDo List</h3>
+                                text-shadow: -3px -3px #9B30FF;font-weight: revert;">Your Publications List</h3>
                     <%end%>
                 </div>
                 <div>
-                    <%= link_to 'http://localhost:3000/tasks/new', style:"text-decoration: none;"  do %>
+                    <%= link_to new_task_path, style:"text-decoration: none;"  do %>
                     <h3 style="background-color: #E51EEB; border-color: #E51EEB; font-weight: revert;
-                                text-shadow: -3px -3px #9B30FF;">New ToDo</h3>
+                                text-shadow: -3px -3px #9B30FF;">New Publication</h3>
                     <%end%>
                 </div>
                 <div>
-                    <%= link_to 'http://localhost:3000/users/1/edit', style:"text-decoration: none;"  do %>
+                    <%= link_to edit_user_path(User.last), style:"text-decoration: none;"  do %>
                     <h3 style="background-color: #C734CF; border-color: #C734CF; font-weight: revert;
                                 text-shadow: -3px -3px #9B30FF; ">User Edit</h3>
                     <%end%>
                 </div>
                 <div>
-                    <%= link_to 'http://localhost:3000/users/1/edit', style:"text-decoration: none;"  do %>
+                    <%= link_to edit_user_path(User.last), style:"text-decoration: none;"  do %>
                     <h3 style="background-color: #94159B; border-color: #94159B; font-weight: revert;
                                 text-shadow: -3px -3px #9B30FF; ">Logout</h3>
                     <%end%>

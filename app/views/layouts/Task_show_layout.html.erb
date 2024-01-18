@@ -81,7 +81,7 @@
                         <%= button_to "Delete", @task, method: :delete, class:"btn btn-danger" %>
                     </div>
                 </div>
-                <% task_image_url=(@task.url_image.present? && @task.url_image.include?(".jpg" || ".jpeg"))? @task.url_image : 'https://i.pinimg.com/736x/e9/05/1a/e9051a7db6d278fac69e6f17cb443ff6.jpg' %>
+                <% task_image_url=(@task.url_image.present? && @task.url_image.include?(".jpg") || @task.url_image.include?(".jpeg") || @task.url_image.include?(".gif"))? @task.url_image : 'https://i.pinimg.com/736x/e9/05/1a/e9051a7db6d278fac69e6f17cb443ff6.jpg' %>
                 <%= image_tag task_image_url, style:"width: auto;
                 height: 50%; padding-top: 30px; border: hidden;
                 border-radius: 10%;

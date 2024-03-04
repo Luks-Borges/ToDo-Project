@@ -1,5 +1,22 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'simplecov'
+require 'simplecov_json_formatter' #Trago o simplecov pro helper do rails
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::JSONFormatter,
+  SimpleCov::Formatter::HTMLFormatter
+]) # Pedimos para formatar tanto em json quanto em html
+
+SimpleCov.start do
+  add_group 'Config', 'config'
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Helpers', 'app/helpers' #Vai agrupar em uma aba especifica
+  add_group 'Libs', 'lib'
+  add_group 'Models', 'app/models'
+  add_group 'Specs', 'spec'
+end
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production

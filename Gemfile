@@ -5,7 +5,6 @@ ruby "3.0.2"
 gem 'bootstrap', '~> 5.3.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
-gem 'rspec-rails', '~> 4.0.0'
 
 # gem 'error_highlight', '>= 0.4.0'
 gem 'actionmailbox', '~> 7.1.2'
@@ -58,6 +57,8 @@ gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+gem 'diff-lcs', '~> 1.5', '>= 1.5.1'
+
 gem 'pry-rails'
 
 gem 'pry', '~> 0.14.2'
@@ -73,6 +74,12 @@ gem 'pry-nav'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'rspec-rails', '~> 6.1.1'
+
+  gem 'docile', '~> 1.4'
+
+  gem 'rails-controller-testing'
+
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
 end
 
@@ -93,6 +100,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "simplecov", "~> 0.22.0", :require => false
+  gem "simplecov_json_formatter", "~> 0.1.4", :require => false
 end
 
 gem 'devise'

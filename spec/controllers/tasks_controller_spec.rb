@@ -29,7 +29,7 @@ RSpec.describe TasksController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'executa a requisição de edit' do
+    it 'executa a requisição de new' do
       get :new
       expect(response).to render_template('create_layout')
     end 

@@ -1,6 +1,6 @@
 <h1>Introdução</h1>
 
- ![Tests](https://github.com/Luks-Borges/ToDo-Project/actions/workflows/ruby.yml/badge.svg)
+ ![Tests](https://github.com/Luks-Borges/ToDo-Project/actions/workflows/ruby.yml/badge.svg) [![Maintainability](https://api.codeclimate.com/v1/badges/36eb67ab9b414b7a89fa/maintainability)](https://codeclimate.com/github/Luks-Borges/ToDo-Project/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/36eb67ab9b414b7a89fa/test_coverage)](https://codeclimate.com/github/Luks-Borges/ToDo-Project/test_coverage)
 <p>O projeto tem como objetivo permitir que o usuário customize sua experiência, dando o poder de decidir qual será a melhor forma de utilizá-lo. De início foi projetado para se tornar uma to-do list, onde cada tarefa poderia ser adicionada e modificada pelo usuário, dando a capacidade de também customizar suas tarefas com imagens ou não.</p>
 
 <h1>Iniciando a aplicação</h1> 

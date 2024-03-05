@@ -1,10 +1,21 @@
-test:
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: <%= ENV["POSTGRES_DB"] %>
-  username: <%= ENV['POSTGRES_USER'] %>
-  password: <%= ENV["POSTGRES_PASSWORD"] %>
+stages:
+  - test
 
-  #Arquivo de configuração do postgre para rodar testes
-  #Quando criamos uma aplicação rails ele monta essa estrutura para o database
+variables:
+  MYSQL_DATABASE: "db_name"
+  MYSQL_ROOT_PASSWORD: "dbpass"
+  MYSQL_USER: "username"
+  MYSQL_PASSWORD: "dbpass"
+  MYSQL_HOST: mysql
+
+test:
+  image: python:latest
+  stage: test
+  services:
+    - mysql:5.7
+  script:
+    - apt-get update && apt-get install -y git curl libmcrypt-dev default-mysql-client
+    - mysql --version
+    - sleep 20
+    - echo "SHOW tables;" | mysql -u root -p"$MYSQL_ROOT_PASSWORD" -h "${MYSQL_HOST}" "${MYSQL_DATABASE}"
+    - echo "Database host is '${MYSQL_HOST}'"

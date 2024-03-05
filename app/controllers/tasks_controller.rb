@@ -14,6 +14,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
+    # New é diferente de create pois é apenas a requisação que vai para a página que executa o create
     @task = Task.new
     render layout: 'create_layout'
   end

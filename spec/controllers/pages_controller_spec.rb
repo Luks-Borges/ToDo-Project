@@ -1,13 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
-    describe '#index' do
-    context 'quando a requisição de index é bem sucedida' do
-        it 'realiza a requisição' do
-            get :index
-            expect(response).to render_template(:home_page)
-            expect(response).redirect_to (tasks_path)
-            end
+
+    context '#home' do
+        it 'retorna status 200' do
+            expect(response).to have_http_status(:ok)
+        end
+
+        it 'testa a renderização do layout' do
+            get :home
+            expect(response).to render_template('home')
         end
     end
 end

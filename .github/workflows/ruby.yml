@@ -1,0 +1,64 @@
+#Vamos baixar as dependencias e essa é uma config necessária para o processo de actions
+name: Ruby
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  POSTGRES_DB: postgres
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: password
+
+#Job de testes
+jobs:
+  test:
+    name: Test
+    environment: ToDo-Project # nome do nosso projeto
+    runs-on: ubuntu-latest # Vai rodar no ubuntu
+
+    services:
+      postgres:
+        image: postgres:12
+        ports: ['5432:5432']
+        env:
+          POSTGRES_PASSWORD: password
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.2
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get -yqq install libpq-dev
+          bundle install --jobs 4 --retry 3
+
+      - name: Run tests
+        env:
+          RAILS_ENV: test
+          PGHOST: localhost
+          DISABLE_SPRING: 1
+          #Vai substituir o database.yml pelo ci que colocamos
+          #Em schema load ele vai carregar a estrutura do nosso banco de dados por ultimo ele vai rodar o nosso rspec
+        run: |
+          cp config/database.ci.yml config/database.yml
+          bundle exec rails db:schema:load
+          bundle exec rspec --format progress
+
+      - name: Publish code coverage
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}

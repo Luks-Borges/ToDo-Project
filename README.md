@@ -1,8 +1,8 @@
 <h1>Introdução</h1>
 
-O projeto tem como objetivo permitir que o usuário customize sua experiência, dando o poder de decidir qual será a melhor forma de utilizá-lo. De início foi projetado para se tornar uma to-do list, onde cada tarefa poderia ser adicionada e modificada pelo usuário, dando a capacidade de também customizar suas tarefas com imagens ou não.
-
  ![Tests](https://github.com/Luks-Borges/ToDo-Project/actions/workflows/ruby.yml/badge.svg)
+<p>O projeto tem como objetivo permitir que o usuário customize sua experiência, dando o poder de decidir qual será a melhor forma de utilizá-lo. De início foi projetado para se tornar uma to-do list, onde cada tarefa poderia ser adicionada e modificada pelo usuário, dando a capacidade de também customizar suas tarefas com imagens ou não.</p>
+
 <h1>Iniciando a aplicação</h1> 
 
 Ao iniciar o aplicativo, será apresentado uma home page padrão, com o nome do usuário sendo exibido no lado superior esquerdo, um plano de fundo para a home page e uma imagem de perfil do lado superior direito.

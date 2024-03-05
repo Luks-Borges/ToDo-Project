@@ -9,3 +9,4 @@ test:
   # Arquivo de configuração do postgre para rodar testes
   # Quando criamos uma aplicação rails ele monta essa estrutura para o database
   #Novas mudanças
+  #test commmit
